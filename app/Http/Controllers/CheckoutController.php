@@ -41,12 +41,13 @@ class CheckoutController extends Controller
             $trx = 'TRX-' . mt_rand(0000,9999);
 
             TransactionDetail::create([
-                'transactions_id' => $transaction->id,
+                'transaction_id' => $transaction->id,
                 'products_id' => $cart->product->id,
                 'price' => $cart->product->price,
                 'shipping_status' => 'PENDING',
                 'resi' => '',
-                'code' => $trx
+                'code' => $trx,
+                'quantity' => $cart->quantity
             ]);
         }
 
