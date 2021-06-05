@@ -13,7 +13,7 @@ class AddResiAndShippingStatusToTransactionsDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::table('transactions_details', function (Blueprint $table) {
+        Schema::table('transaction_details', function (Blueprint $table) {
             $table->string('shipping_status'); // PENDING/SHIPPING/SUCCESS
             $table->string('resi');
         });
@@ -26,7 +26,7 @@ class AddResiAndShippingStatusToTransactionsDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions_details', function (Blueprint $table) {
+        Schema::table('transaction_details', function (Blueprint $table) {
             $table->dropColumn('shipping_status');
             $table->dropColumn('resi');
         });

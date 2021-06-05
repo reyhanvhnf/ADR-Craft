@@ -13,7 +13,7 @@ class AddCodeToTransactionsDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::table('transactions_details', function (Blueprint $table) {
+        Schema::table('transaction_details', function (Blueprint $table) {
             $table->string('code');
         });
     }
@@ -25,7 +25,7 @@ class AddCodeToTransactionsDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions_details', function (Blueprint $table) {
+        Schema::table('transaction_details', function (Blueprint $table) {
             $table->dropColumn('code');
         });
     }
