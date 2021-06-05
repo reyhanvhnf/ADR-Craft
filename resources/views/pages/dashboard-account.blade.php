@@ -232,22 +232,6 @@
             });
 </script>
 <script>
-        $( document ).ready(function() {
-            $.ajax({
-                url: 'getCity/' + {{ $user->provinces_id }},
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    $.each(data, function (key, value) {
-                        $('select[name="regencies_id"]').append(
-                            '<option value="' +
-                            value.id + '">' + value.city_name + '</option>');
-                    });
-                    $('select[name="regencies_id"]').val({{ $user->regencies_id }})
-                }
-            });
-        });
         $('select[name="provinces_id"]').on('change', function () {
                     var cityId = $(this).val();
                     if (cityId) {
