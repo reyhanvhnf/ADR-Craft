@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionDetail extends Model
 {
     protected $fillable = [
-        'transactions_id', 
+        'transaction_id', 
         'products_id',
         'price',
         'shipping_status',
@@ -25,6 +25,6 @@ class TransactionDetail extends Model
     }
 
     public function transaction(){
-        return $this->hasOne( Transaction::class, 'id', 'transactions_id' );
+        return $this->hasOne( Transaction::class, 'id', 'transaction_id' );
     }
 }
