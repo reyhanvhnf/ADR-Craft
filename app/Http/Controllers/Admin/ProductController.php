@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Product;
 use App\User;
+use Auth;
 
 use App\Http\Requests\Admin\ProductRequest;
 
@@ -79,8 +80,8 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
-
         $data['slug'] = Str::slug($request->name);
+        $data['users_id'] = Auth::user()->id;
 
         Product::create($data);
 
