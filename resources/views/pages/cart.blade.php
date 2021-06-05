@@ -57,7 +57,7 @@
                         @endif
                       </td>
                       <td style="width: 35%;">
-                        <div class="product-title">{{ $cart->product->name }}</div>
+                        <div class="product-title items">{{ $cart->product->name }}</div>
                       </td>
                       <td style="width: 35%;">
                         <form action="#">
@@ -70,7 +70,7 @@
                         </form>
                       </td>
                       <td style="width: 35%;">
-                        <div class="product-title" id="productPrice{{ $index }}">Rp.{{ number_format($cart->product->price) }}</div>
+                        <div class="product-title" id="productPrice{{ $index }}">{{ $cart->product->price }}</div>
                         <div class="product-subtitle">IDR</div>
                       </td>
                       <td style="width: 20%;">
@@ -99,7 +99,7 @@
           </div>
           <form action="{{ route('checkout') }}" id='locations' method="POST" enctype="multipart/form-data">
             @csrf
-            {{-- <input type="hidden" name="total_price" value="{{ $totalPrice }}"> --}}
+            <input type="hidden" name="total_price" id="total_price">
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
               <div class="col-md-6">
                 <div class="form-group">
@@ -352,7 +352,7 @@
                         totalHarga -= updateHarga;
                     }
                     subTotal.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
-                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga + 10000, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
+                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
                     totalBiayaValue = totalHarga
 
                     // Update quantity 
@@ -399,7 +399,7 @@
                     updateHarga = hargaProduk * (quantity - currentVal )
                     totalHarga += updateHarga;
                     subTotal.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
-                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga + 10000, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
+                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
                     totalBiayaValue = totalHarga
 
                     // Update quantity 
@@ -441,7 +441,7 @@
                     updateHarga = hargaProduk * (currentVal - quantity)
                     totalHarga -= updateHarga;
                     subTotal.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
-                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga + 10000, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
+                    totalBiaya.innerText = 'Rp. ' + parseFloat(totalHarga, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()
                     totalBiayaValue = totalHarga
 
                     // Update quantity 
@@ -498,6 +498,7 @@
                     let hargaOngkir = parseInt($(this).val())
                     let ongkirShow = document.getElementById("ongkir")
                     let totalBiaya = document.getElementById('totalBiaya')
+                    document.getElementById('total_price').value = totalBiayaValue + hargaOngkir
 
                     $('input[name=ongkir]').val(hargaOngkir)
                     
