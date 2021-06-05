@@ -13,7 +13,7 @@ class AddQuantityFieldAtTransactionDetails extends Migration
      */
     public function up()
     {
-        Schema::table('transaction_details', function (Blueprint $table) {
+        Schema::table('transactions_details', function (Blueprint $table) {
             $table->integer('quantity');
         });
     }
@@ -25,7 +25,7 @@ class AddQuantityFieldAtTransactionDetails extends Migration
      */
     public function down()
     {
-        Schema::table('transaction_details', function (Blueprint $table) {
+        Schema::table('transactions_details', function (Blueprint $table) {
             $table->dropColumn('quantity');
         });
     }
