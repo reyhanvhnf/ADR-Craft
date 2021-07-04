@@ -18,9 +18,6 @@ Route::get('/details/{id}', 'DetailController@index')->name('detail');
 Route::post('/details/{id}', 'DetailController@add')->name('detail-add');
 
 Route::get('/success', 'CartController@success')->name('success');
-// Route::get('/province','CartController@get_province')->name('province');
-// Route::get('/kota/{id}','CartController@get_city');    
-// Route::get('/origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}','CartController@get_ongkir');
 
 Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans-callback');
 Route::get('/register/success', 'Auth\RegisterController@success')->name('register-success');
@@ -78,6 +75,9 @@ Route::prefix('admin')
         Route::resource('product', 'ProductController');
         Route::resource('product-gallery', 'ProductGalleryController');
         Route::resource('transaction', 'TransactionController');
+        Route::post('/rekap', 'TransactionController@rekap')->name('rekap');
+        Route::post('/transaction/filter', 'TransactionController@filter')->name('filter');
+        Route::get('/transaction/excel/{dari}/{ke}', 'TransactionController@eksporExcel')->name('excel.ekspor');
     });
 
 Auth::routes();

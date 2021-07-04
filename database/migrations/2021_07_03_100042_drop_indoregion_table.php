@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductGalleriesTable extends Migration
+class DropIndoregionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateProductGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_galleries', function (Blueprint $table) {
-            $table->id();
-            $table->string('photos')->length(100);
-            $table->integer('products_id')->length(20);
-
-            $table->timestamps();
-        });
+        Schema::drop('indoregion_districts');
+        Schema::drop('indoregion_provinces');
+        Schema::drop('indoregion_regencies');
+        Schema::drop('indoregion_villages');
     }
 
     /**
@@ -29,6 +26,6 @@ class CreateProductGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_galleries');
+        //
     }
 }

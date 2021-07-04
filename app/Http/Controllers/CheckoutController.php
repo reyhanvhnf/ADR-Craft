@@ -29,6 +29,15 @@ class CheckoutController extends Controller
                     ->where('users_id', Auth::user()->id)
                     ->get();
 
+        // Hitung total price
+        $subtotal = 0;
+        $totalPrice = 0;
+        foreach ($carts as $cart) {
+            $subtotal += $cart->quantity * $cart->product->prices;
+        }
+        // Tambah ongkir
+        $totalPrice = $subtotal + $request->ongkir;
+
         $transaction = Transaction::create([
             'users_id' => Auth::user()->id,
             'shipping_price' => 0,
