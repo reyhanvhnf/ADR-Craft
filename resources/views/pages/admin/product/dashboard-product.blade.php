@@ -20,7 +20,7 @@
                 <div class="row mt-4">
                     @foreach ($products as $product)
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <a href="{{ route('dashboard-product-details', $product->id_product) }}" class="card card-dashboard-product d-block" >                              
+                            <a href="{{ route('dashboard-product-details', $product->id) }}" class="card card-dashboard-product d-block" >                              
                                 <div class="card-body" >
                                     <img src="{{ Storage::url($product->galleries->first()->photos ?? '') }}" alt="" class="w-100 mb-2">
                                     <div class="myproduct-title ">{{ $product->name }}</div>
