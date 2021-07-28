@@ -47,7 +47,7 @@
                   @php $totalPrice = 0 @endphp
                   @foreach ($carts as $index=>$cart)
                     <tr>
-                      <td style="width: 20%;">
+                      <td style="width: 25%;">
                         @if($cart->product->galleries)
                           <img
                             src="{{ Storage::url($cart->product->galleries->first()->photos) }}"
@@ -56,21 +56,21 @@
                           />
                         @endif
                       </td>
-                      <td style="width: 35%;">
+                      <td style="width: 25%;">
                         <div class="product-title items">{{ $cart->product->name }}</div>
                       </td>
-                      <td style="width: 35%;">
+                      <td style="width: 30%;">
                         <form action="#">
                           <input type="hidden" value="{{ csrf_token() }}" id="quantityToken">
                             <div class="quantity">
-                                <button type="button" data-quantity="minus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->price }}"><i class="fas fa-minus"></i></button>
-                                <input type="text" data-formQuantity="quantity" name="formInput{{ $index }}" id="quantity{{ $index }}" value="{{ $cart->quantity }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->price }}"/>
-                                <button type="button" data-quantity="plus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->price }}"><i class="fas fa-plus"></i></button>
+                                <button type="button" data-quantity="minus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"><i class="fas fa-minus"></i></button>
+                                <input type="text" data-formQuantity="quantity" name="formInput{{ $index }}" id="quantity{{ $index }}" value="{{ $cart->quantity }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"/>
+                                <button type="button" data-quantity="plus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"><i class="fas fa-plus"></i></button>
                             </div>
                         </form>
                       </td>
-                      <td style="width: 35%;">
-                        <div class="product-title" id="productPrice{{ $index }}">{{ $cart->product->price }}</div>
+                      <td style="width: 25%;">
+                        <div class="product-title" id="productPrice{{ $index }}">{{ $cart->product->prices }}</div>
                         <div class="product-subtitle">IDR</div>
                       </td>
                       <td style="width: 20%;">
@@ -83,7 +83,7 @@
                         </form>
                       </td>
                     </tr>
-                    @php $totalPrice += $cart->product->price @endphp
+                    @php $totalPrice += $cart->product->prices @endphp
                   @endforeach
                 </tbody>
               </table>
@@ -110,7 +110,6 @@
                     id="address_one"
                     name="address_one"
                     value="{{ $user->address_one }}"
-                    readonly
                   />
                 </div>
               </div>
@@ -123,7 +122,6 @@
                     id="address_two"
                     name="address_two"
                     value="{{ $user->address_two }}"
-                    readonly
                     />
                 </div>
               </div>
@@ -135,7 +133,7 @@
                   @foreach ($provinsi  as $row)
                   <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                   @endforeach --}}
-                  <select name="provinces_id" class="form-control" disabled>
+                  <select name="provinces_id" class="form-control">
                       <option value="" holder>Pilih Provinsi</option>
                       @foreach ($provinsi as $result)
                       <option value="{{ $result->id }}" @php if ($user->provinces_id == $result->id) { echo "selected"; } @endphp  >{{ $result->province }}</option>
@@ -150,7 +148,7 @@
                   {{--  <select name="regencies_id" id="regencies_id" class="form-control" v-model="regencies_id" v-if="regencies">
                     <option v-for="regency in regencies" :value="regency.id">@{{regency.name }}</option>
                   </select> --}}
-                   <select name="regencies_id" class="form-control" disabled> </select>
+                   <select name="regencies_id" class="form-control"> </select>
                   {{--  <select v-else class="form-control"></select>--}}
                 </div>
               </div>
@@ -163,7 +161,6 @@
                     id="zip_code"
                     name="zip_code"
                     value="{{ $user->zip_code }}"
-                    readonly
                   />
                 </div>
               </div>
@@ -176,12 +173,8 @@
                     id="phone_number"
                     name="phone_number"
                     value="{{ $user->phone_number }}"
-                    readonly
                   />
                 </div>
-              </div>
-              <div class="col-md-6">
-                <a href="{{ route('dashboard-settings-store') }}" class="mx-3 btn btn-success mt-3">Edit Shipping</a>
               </div>
             <div class="row" data-aos="fade-up" data-aos-delay="150">
               <div class="col-12">

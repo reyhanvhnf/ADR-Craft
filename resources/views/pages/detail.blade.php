@@ -73,7 +73,7 @@
             <div class="row">
               <div class="col-lg-8">
                 <h1>{{ $product->name }}</h1>
-                <div class="price">Rp.{{ number_format($product->price) }}</div>
+                <div class="prices">Rp.{{ number_format($product->prices) }}</div>
                 <span class="quantity-title">Quantity: </span>
                   <form action="#">
                       <div class="quantity d-flex mb-3">

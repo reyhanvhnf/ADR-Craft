@@ -15,12 +15,17 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('users_id');
-            $table->integer('shipping_price');
-            $table->integer('total_price');
-            $table->string('transaction_status'); // UNPAID/PENDING/SUCCESS/FAILED
-            $table->string('resi');
+            $table->string('code')->length(20);
+            $table->integer('users_id')->length(20); 
+            $table->integer('sub_total')->length(8);
+            $table->integer('shipping_price')->length(8);
+            $table->integer('total_price')->length(8);
+            $table->string('transaction_status')->length(8);  // (UNPAID/PENDING/SUCCESS/FAILED)  
+            $table->string('status_pay')->length(8)->nullable(); 
+            $table->string('courier')->length(20);
+            $table->string('service')->length(50)->nullable(); 
+            $table->string('resi')->length(20);       
+            
 
             $table->softDeletes();
             $table->timestamps();

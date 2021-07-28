@@ -160,7 +160,7 @@ class TransactionController extends Controller
   public function edit($id)
   {
     $item = Transaction::findOrFail($id);
-    $TD = TransactionDetail::where(['transaction_id' => $id])->first();
+    $TD = TransactionDetail::where(['transactions_id' => $id])->first();
 
     return view('pages.admin.transaction.edit', [
       'item' => $item,

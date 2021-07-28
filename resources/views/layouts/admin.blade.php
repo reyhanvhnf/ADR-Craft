@@ -34,15 +34,16 @@
               >Dashboard</a
             >
             <a
-              href="{{ route('product.index') }}"
+              href="{{ route('dashboard-product') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : '' }}"
               >Products</a
             >
-            <a
+            {{--  <a
               href="{{ route('product-gallery.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : '' }}"
               >Galleries</a
             >
+            --}}
             <a
               href="{{ route('transaction.index') }}"
               class="list-group-item list-group-item-action"
@@ -96,21 +97,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto d-none d-lg-flex">
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
+                  <a 
+                    href="#" 
+                    class="nav-link" 
+                    id="navbarDropdown" 
+                    role="button" 
                     data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
                   >
-                    <img
-                      src="/images/foto-profil.jpg"
-                      alt=""
-                      class="rounded-circle mr-2 profile-picture"
-                    />
-                    Hi, Reyhan
+                    <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=FF7158&color=FFF" 
+                    height="60" 
+                    alt="" 
+                    class="rounded-circle mr-2 profile-picture"> 
+                      Hi, {{ Auth::user()->name }}
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/">Logout</a>

@@ -38,7 +38,7 @@
                     {{  $product->name }}
                   </div>
                   <div class="products-price">
-                    Rp.{{ $product->price }}
+                    Rp.{{ $product->prices }}
                   </div>
                 </a>
               </div>   

@@ -11,14 +11,16 @@ class Cart extends Model
     ];
 
     protected $hidden = [
-
+        
     ];
 
-    public function product(){
-        return $this->hasOne( Product::class, 'id', 'products_id', 'quantity' );
+    public function product() 
+    {
+        return $this->hasOne(Product::class, 'id', 'products_id', 'quantity'); // karena setiap item cart itu punya 1 product 
     }
 
-    public function user(){
-        return $this->belongsTo( User::class, 'users_id', 'id');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id', 'id'); 
     }
 }

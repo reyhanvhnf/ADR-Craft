@@ -45,7 +45,7 @@
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-              @foreach ($buyTransactions as $transaction)
+              @foreach ($transaction as $transaction)
                   <a
                     href="{{ route('dashboard-transaction-details', $transaction->id) }}"
                     class="card card-list d-block"

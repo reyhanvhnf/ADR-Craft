@@ -22,6 +22,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('home') }}">Home </a>
             </li>
+            <li class="nav-item">
+				<a class="nav-link " href="{{ route('contact-us') }}">Contact Us</a>
+			</li>
             @guest
                 <li class="nav-item">
                     <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
@@ -40,20 +43,19 @@
             <!-- Desktop Menu -->
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item dropdown">
-                    <a
-                        href="#"
-                        class="nav-link"
-                        id="navbarDropdown"
-                        role="button"
+                    <a 
+                        href="#" 
+                        class="nav-link border-left" 
+                        id="navbarDropdown" 
+                        role="button" 
                         data-toggle="dropdown"
                     >
-                        <img
-                            src="/images/foto-profil.jpg"
-                            alt=""
-                            class="rounded-circle mr-2 profile-picture"
-                        />
-                        Hi, {{ Auth::user()->name }}
-                    </a>
+						<img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=FF7158&color=FFF" 
+                        height="60" 
+                        alt="" 
+                        class="rounded-circle mr-2 ml-2 profile-picture">
+                            &nbsp; Hi, {{ Auth::user()->name }}
+						</a>
                     <div class="dropdown-menu">
                         <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
                         <a href="{{ route('dashboard-settings-store') }}" class="dropdown-item">

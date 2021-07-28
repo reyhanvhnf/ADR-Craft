@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->length(30)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->length(100);
+            $table->string('roles')->default('USER');
 
             $table->longText('address_one');
             $table->longText('address_two');

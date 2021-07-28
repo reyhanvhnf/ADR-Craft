@@ -89,12 +89,11 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <img
-                      src="/images/foto-profil.jpg"
-                      alt=""
-                      class="rounded-circle mr-2 profile-picture"
-                    />
-                    Hi, {{ Auth::user()->name }}
+                    <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=FF7158&color=FFF" 
+                    height="60" 
+                    alt="" 
+                    class="rounded-circle mr-2 profile-picture"> 
+                      Hi, {{ Auth::user()->name }}
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('home') }}"
