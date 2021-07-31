@@ -21,7 +21,7 @@
                     <a href="{{ route('home') }}">Home</a>
                   </li>
                   <li class="breadcrumb-item active">
-                    Product Details
+                    Product Detail
                   </li>
                 </ol>
               </nav>
