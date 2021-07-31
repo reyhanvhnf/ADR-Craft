@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    ADR Craft
+    ADR Craft - Product Details
 @endsection
 
 @section('content')
     <div class="section-content section-dashboard-home" data-aos="fade-up">
         <div class="container-fluid">
             <div class="dashboard-heading">
-                <h2 class="dashboard-title">My Products</h2>
-                <p class="dashboard-subtitle">Manage it well and get money</p>
+                <h2 class="dashboard-title">Products</h2>
+                <p class="dashboard-subtitle">List of Products</p>
             </div>
             <div class="dashboard-content">
                 <div class="row">

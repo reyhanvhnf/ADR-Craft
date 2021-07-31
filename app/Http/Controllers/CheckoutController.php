@@ -38,7 +38,6 @@ class CheckoutController extends Controller
         }
         // Tambah ongkir
         $totalPrice = $subtotal + $request->ongkir;
-        // gitu aja
 
          if($subtotal == 0){
             return redirect('/');
@@ -119,13 +118,11 @@ class CheckoutController extends Controller
     public function midtransfinish(Request $request)
     {
         $code = $request->order_id;
-        //pakai $code soalnya takut di pakai lagi kodenaya
+
         $db = Transaction::where('code',$code)->first();
         
-        // return $db;
         return view('pages.midtrans.selesai',compact('db')); 
-        //dah tinggal get aja di viewnya lanjut, diviewnya ya ?
-        //iya jadi nggak usah redirect , bedain tulisan aja 
+
     }
 
     public function midtransunfinish()

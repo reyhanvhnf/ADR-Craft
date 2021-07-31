@@ -14,7 +14,7 @@
     <div class="dashboard-heading">
       <h2 class="dashboard-title">Transactions</h2>
       <p class="dashboard-subtitle">
-        Big result start from the small one
+        List of Transaction
       </p>
     </div>
     <div class="dashboard-content">

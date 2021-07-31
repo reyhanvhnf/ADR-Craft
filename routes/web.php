@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/contact-us', 'ContactController@index')->name('contact-us');
 
+Route::get('/product', 'ProductController@index')->name('product');
+
 Route::get('/details/{id}', 'DetailController@index')->name('detail');
 Route::post('/details/{id}', 'DetailController@add')->name('detail-add');
 

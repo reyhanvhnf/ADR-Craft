@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    ADR Craft
+    ADR Craft - Product  Details
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@
                                 </ul>
                             </div>
                     @endif
-                    <form action="{{ route('dashboard-product-update', $product->id_product) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard-product-update', $product->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card card-list p-3">
                             <div class="card-body">
@@ -61,12 +61,12 @@
                             </div>
                     </form>
                         <div class="col-12 text-right">
-                            <button type="button" class="btn btn-danger btn-block px-5 btn-delete" productId={{ $product->id_product }} id="delete">
-                            Hapus Product
+                            <button type="button" class="btn btn-danger btn-block px-5 btn-delete" productId={{ $product->id }} id="delete">
+                            Delete Product
                             </button>
                         </div>
                         <div class="col-12 pt-3">
-                            <p class="text-warning">Note : Jika ingin menambahkan foto, harap save terlbih dahulu.</p>
+                            <p class="text-warning">Note : Jika ingin menambahkan foto, harap save terlebih dahulu.</p>
                         </div>
                         
                 </div>
@@ -81,7 +81,7 @@
                                     <div class="col-md-4">
                                         <div class="gallery-container">
                                             <img src="{{ Storage::url($gallery->photos ?? '') }}" alt="" class="w-100">
-                                            <a href="{{ route('dashboard-product-gallery-delete', $gallery->id_gallery) }}" class="delete-gallery">
+                                            <a href="{{ route('dashboard-product-gallery-delete', $gallery->id) }}" class="delete-gallery">
                                                 <img src="{{ asset('images/icon-delete.svg') }}" alt="">
                                             </a>
                                         </div>
@@ -90,7 +90,7 @@
                                 <div class="col-12">
                                     <form action="{{ route('dashboard-product-gallery-upload') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="products_id" value="{{ $product->id_product }}">
+                                        <input type="hidden" name="products_id" value="{{ $product->id }}">
                                         <input type="file" name="photos" id="file" style="display: none;" onchange="form.submit()">
                                         <p class="text-danger">* Image must be 764 x 560 pixel</p>
                                         <button type="button" class="btn btn-secondary btn-block" onclick="thisFileUpload()">

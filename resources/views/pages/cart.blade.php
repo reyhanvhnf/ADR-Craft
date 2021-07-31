@@ -40,7 +40,7 @@
                     <td>Image</td>
                     <td>Name</td>
                     <td>Quantity</td>
-                    <td>Price</td>
+                    <td>Price/Pcs</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -59,13 +59,14 @@
                       <td style="width: 25%;">
                         <div class="product-title items">{{ $cart->product->name }}</div>
                       </td>
-                      <td style="width: 30%;">
+                      <td style="width: 25%;">
                         <form action="#">
                           <input type="hidden" value="{{ csrf_token() }}" id="quantityToken">
                             <div class="quantity">
-                                <button type="button" data-quantity="minus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"><i class="fas fa-minus"></i></button>
-                                <input type="text" data-formQuantity="quantity" name="formInput{{ $index }}" id="quantity{{ $index }}" value="{{ $cart->quantity }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"/>
-                                <button type="button" data-quantity="plus" data-field="formInput{{ $index }}" data-stock="{{ $cart->product->stock }}" data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"><i class="fas fa-plus"></i></button>
+                              <input type="text" data-formQuantity="quantity" 
+                                name="formInput{{ $index }}" id="quantity{{ $index }}" 
+                                value="{{ $cart->quantity }}" data-stock="{{ $cart->product->stock }}" 
+                                data-productId="{{ $cart->id }}" data-productPrice="{{ $cart->product->prices }}"/>
                             </div>
                         </form>
                       </td>
@@ -128,28 +129,18 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="provinces_id">Province</label>
-                  {{--<select name="province_id" id="province_id" class="form-control">
-                  <option value="">Province</option>
-                  @foreach ($provinsi  as $row)
-                  <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
-                  @endforeach --}}
                   <select name="provinces_id" class="form-control">
                       <option value="" holder>Pilih Provinsi</option>
                       @foreach ($provinsi as $result)
                       <option value="{{ $result->id }}" @php if ($user->provinces_id == $result->id) { echo "selected"; } @endphp  >{{ $result->province }}</option>
                       @endforeach
                   </select>
-                  {{--  <select v-else class="form-control"></select> --}}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="regencies_id">City</label>
-                  {{--  <select name="regencies_id" id="regencies_id" class="form-control" v-model="regencies_id" v-if="regencies">
-                    <option v-for="regency in regencies" :value="regency.id">@{{regency.name }}</option>
-                  </select> --}}
                    <select name="regencies_id" class="form-control"> </select>
-                  {{--  <select v-else class="form-control"></select>--}}
                 </div>
               </div>
               <div class="col-md-4">
@@ -176,39 +167,46 @@
                   />
                 </div>
               </div>
+            </div>
             <div class="row" data-aos="fade-up" data-aos-delay="150">
               <div class="col-12">
                 <hr />
               </div>
               <div class="col-12">
                 <h2 class="mb-1">Payment Informations</h2>
-                <select name="couriers" id="couriers" class="form-control mt-3 mb-2">
-                    <option value="" holder>Pilih Kurir</option>
+              </div>
+            </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="couriers">Courier</label>
+                  <select name="couriers" id="couriers" class="form-control mt-3 mb-2">
+                    <option value="" holder>Select Courier</option>
                     <option value="jne">JNE</option>
                     <option value="tiki">TIKI</option>
                     <option value="pos">POS Indonesia</option>
                 </select>
-                <select name="services" id="services" class="form-control mt-3 mb-2"></select>
-                <table class="pay-info">
-                    <tr>
-                        <td width="50% " >Sub total</td>
-                          <td width="50% " class="text-right" style="color: green;" id="subTotal"></td>
-                    </tr>
-                    <tr>
-                        <td width="50% " >Pajak</td>
-                            <td width="50% " class="text-right ">10%</td>
-                    </tr>
-                    <tr>
-                        <td width="50% " >Ongkir</td>
-                        <input type="hidden" name="ongkir">
-                        <td width="50% " class="text-right" id="ongkir">Rp 0</td>
-                    </tr>
-                        <td width="50% " >Total Biaya</td>
-                          <td width="50% " class="text-right" style="color: green;" id="totalBiaya"></td>
-                    </tr>
-                    
-                </table>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="services">Services</label>
+                  <select name="services" id="services" class="form-control mt-3 mb-2"></select>
+                </div>
+              </div>
             </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-4 col-md-3">
+                <div class="product-title" id="subTotal"></div>
+                <div class="product-subtitle">Sub Total</div>
+              </div>
+            <div class="col-4 col-md-3">
+                <div class="product-title" id="ongkir"></div>
+                <div class="product-subtitle">Shipping Price</div>
+            </div>
+            <div class="col-4 col-md-3">
+                <div class="product-title" id="totalBiaya"></div>
+                <div class="product-subtitle">Total Price</div>
             </div>
               <div class="col-8 col-md-3">
                 <button

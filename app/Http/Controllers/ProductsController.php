@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
-     /**
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('pages.products');
+    {   
+        $products = Product::with(['galleries'])->paginate(16);
+        return view('pages.product', [
+            'products' => $products
+        ]);
     }
 }

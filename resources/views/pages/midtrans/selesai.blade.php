@@ -2,7 +2,7 @@
 
 @section('title')
 selesai
-    ADR &#8211; Pancarkan Pesona Cantikmu 
+    ADR Craft
 @endsection
 
 @section('content')
@@ -18,8 +18,7 @@ selesai
                   Transaction Failed!
                 </h2>
                 <p>
-                  Silahkan selesaikan pembayaran yang telah ditentukan 
-                  agar barang dapat diproses segera mungkin!
+                  Please finish the payment for this transaction!
                 </p>
                 <div>
                   <a href="{{ route('dashboard') }}" class="btn btn-success w-50 mt-4">
@@ -45,8 +44,8 @@ selesai
                   Transaction Processed!
                 </h2>
                 <p>
-                  Silahkan tunggu, pesanan sedang kami proses, kami akan
-                  menginformasikan resi secept mungkin!
+                  Please wait, the transaction will be procces,
+                  we will inform the receipt!
                 </p>
                 <div>
                   <a href="{{ route('dashboard') }}" class="btn btn-success w-50 mt-4">
@@ -72,7 +71,7 @@ selesai
                   Transaction Expired!
                 </h2>
                 <p>
-                  Silahkan Order Kembali!
+                  Please order again!
                 </p>
                 <div>
                   <a href="{{ route('dashboard') }}" class="btn btn-success w-50 mt-4">

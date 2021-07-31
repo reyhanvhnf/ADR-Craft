@@ -83,7 +83,7 @@ class ProductController extends Controller
         
 
         $gallery = [
-            'products_id' => $product->id_product,
+            'products_id' => $product->id,
             'photos' => $request->file('photos')->store('assets/product','public')
         ];
 

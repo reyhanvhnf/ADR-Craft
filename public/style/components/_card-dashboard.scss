@@ -1,0 +1,23 @@
+.card-dashboard-product {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    text-decoration: none !important;
+    border-radius: 11px;
+    border: none;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    padding: 5px;
+    .card-body {
+        .myproduct-title {
+            font-weight: normal;
+            font-size: 20px;
+            text-align: left;
+            color: #342e2e;
+        }
+        .product-price {
+            font-weight: normal;
+            font-size: 16px;
+            text-align: left;
+            color: #f32355;
+        }
+    }
+}

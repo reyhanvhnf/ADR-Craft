@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    ADR Craft
+    ADR Craft -Transaction
 @endsection
 
 @section('content')
@@ -31,7 +31,7 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Transaction_status</label>
+                                                <label>Transaction Status</label>
                                                 <select name="transaction_status" id="status" v-model="status" class="form-control">
                                                     <option value="" disabled>-------------</option>
                                                     <option value="PENDING">PENDING</option>

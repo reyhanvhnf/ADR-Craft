@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('titile')
-    ADR - Craft Dashboard
+    ADR Craft - Dashboard
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
     <div class="container-fluid">
     <div class="dashboard-heading">
         <h2 class="dashboard-title">Admin Dashboard</h2>
-        <p class="dashboard-subtitle">This is ADR - Craft Administrator Panel</p>
+        <p class="dashboard-subtitle">This is ADR Craft Administrator Panel</p>
     </div>
     <div class="dashboard-content">
         <div class="row">

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    User
+    ADR Craft - User Account
 @endsection
 
 @section('content')

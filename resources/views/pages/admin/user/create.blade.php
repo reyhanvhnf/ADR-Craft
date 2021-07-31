@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  ADR - Craft Settings
+  ADR Craft - User Account
 @endsection
 
 @section('content')
@@ -36,7 +36,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Username</label>
+                      <label>Name</label>
                       <input type="text" onkeydown="preventNumberInput(event)" onkeyup="preventNumberInput(event)" class="form-control" name="name" required />
                     </div>
                   </div>

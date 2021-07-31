@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    ADR Craft
+    ADR Craft -Transaction
 @endsection
 
 
@@ -9,8 +9,8 @@
     <div class="section-content section-dashboard-home" data-aos="fade-up">
         <div class="container-fluid">
             <div class="dashboard-heading">
-                <h2 class="dashboard-title">Admin Dashboard</h2>
-                <p class="dashboard-subtitle">this is ADR Craft admin page!</p>
+                <h2 class="dashboard-title">Transaction</h2>
+                <p class="dashboard-subtitle">List of Transaction</p>
             </div>
             <div class="dashboard-content">
                 <div class="row">
@@ -44,12 +44,12 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Nama</th>
-                                                <th>Harga</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
                                                 <th>Transaction</th>
                                                 <th>Payment</th>
-                                                <th>Dibuat</th>
-                                                <th>Aksi</th>
+                                                <th>Date</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody></tbody>
@@ -151,8 +151,8 @@
                         name: 'transaction_status'
                     },
                     {
-                    data: 'status_pay',
-                    name: 'status_pay'
+                        data: 'status_pay',
+                        name: 'status_pay'
                     },
                     {
                         data: 'created_at',

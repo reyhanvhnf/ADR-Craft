@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    ADR Craft &#8211; Pancarkan Pesona Cantikmu 
+    ADR Craft
 @endsection
 
 @section('content')

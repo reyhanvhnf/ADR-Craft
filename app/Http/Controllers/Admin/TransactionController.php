@@ -98,16 +98,16 @@ class TransactionController extends Controller
                       <button class="btn btn-primary dropdown-toggle mr-1 mb-1"
                           type="button"
                           data-toggle="dropdown">
-                          Aksi
+                          Action
                       </button>
                       <div class="dropdown-menu">
                           <a class="dropdown-item" href="' . route('transaction.edit', $item->id) .  '">
-                          Sunting
+                          Edit
                           </a>
                           <form action="' . route('transaction.destroy', $item->id) . '" method="POST">
                               ' . method_field('delete') . csrf_field() . '
                               <button type="submit" class="dropdown-item text-danger">
-                                  Hapus
+                                  Delete
                               </button>
                           </form>
                       </div>

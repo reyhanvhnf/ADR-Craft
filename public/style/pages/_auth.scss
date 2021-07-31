@@ -1,23 +1,42 @@
-.page-auth {
-  .row-login {
-    min-height: 70vh;
-  }
-  .section-store-auth {
-    h2 {
-      font-size: 28px;
-      color: #0c0d36;
-      font-weight: 200;
-      margin-top: 0;
+.login-container {
+    @media (min-width: 992px) {
+        background: linear-gradient(90deg, #ffffff 60%, #eeeae8 40%);
+        width: 100vw;
+        height: 100vh;
     }
+}
 
-    .form-control {
-      background: #f3f3f3;
-      border-radius: 8px;
+.login-container-regis {
+    @media (min-width: 992px) {
+        background: linear-gradient(90deg, #ffffff 50%, #eeeae8 50%);
+        width: 100vw;
+        height: 100vh;
     }
+}
 
-    .btn-signup {
-      @include button-variant(#f3f3f3, transparent);
-      color: #bbbbbb;
+.card-register {
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.form-control {
+    border: none;
+    background-color: #F3F3F3;
+}
+
+.page-login {
+    height: 100vh;
+    font-size: 16px;
+    .btn-login {
+        background-color: #e7cbbe;
+        color: #ffffff;
+        border: none;
+        &:hover {
+            color: #ffffff;
+        }
     }
-  }
+    .btn-register {
+        background-color: #f3f3f3;
+        border: none;
+    }
 }

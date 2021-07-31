@@ -10,31 +10,14 @@
                             <li class="mt-2"><a href="" class="text-muted text-decoration-none">Phone : +628 5752285282</a></li>
                             <li class="mt-2"><a href="" class="text-muted text-decoration-none">Email: adr@gmail.com</a></li>
                         </ul>
-                        <div class="widget-social ">
-                            <ul class="list-unstyled ">
-                                <li><a href="https://www.facebook.com/DaitaCosmetic" target="_blank"><i class="fab fa-facebook-f " style="color: #0C0D36;"></i></a></li>
-                                <li><a href="https://www.instagram.com/daitacosmeticofficial/" target="_blank"><i class="fab fa-instagram" style="color: #0C0D36;"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UC2avgMmSBEOt5CaehnkjWHg" target="_blank"><i class="fab fa-youtube" style="color: #0C0D36;"></i></a></>
-                            </ul>
-                        </div>
                     </div>
 
-                    <div class="col-12 col-lg-3 ml-auto ">
-                        <h5>INFORMATION</h5>
-                        <ul class="list-unstyled mt-4">
-                            <li><a href=" " class="text-muted text-decoration-none ">About Us</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Checkout</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Contact</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Service</a></li>
-                        </ul>
-                    </div>
                     <div class="col-12 col-lg-2 ml-auto ">
-                        <h5>ACCOUNT</h5>
+                        <h5>INFORMATION</h5>
                         <ul class="list-unstyled mt-4 ">
-                            <li><a href=" " class="text-muted text-decoration-none ">My Account</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Contact</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Shopping Cart</a></li>
-                            <li class="mt-3"><a href=" " class="text-muted text-decoration-none ">Shop</a></li>
+                            <li><a href="{{ route('dashboard-settings-store') }}" class="text-muted text-decoration-none ">My Account</a></li>
+                            <li class="mt-3"><a href="{{ route('cart') }}" class="text-muted text-decoration-none ">Shopping Cart</a></li>
+                            <li class="mt-3"><a href="{{ route('home') }}" class="text-muted text-decoration-none ">Shop</a></li>
                         </ul>
                     </div>
                 </div>

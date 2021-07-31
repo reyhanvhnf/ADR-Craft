@@ -1,14 +1,539 @@
-.page-home {
-  h5 {
-    font-weight: 300;
-    margin-bottom: 15px;
-  }
-
-  .store-trend-categories {
-    margin-top: 30px;
-  }
-
-  .store-new-products {
-    margin-top: 10px;
-  }
-}
+    .pages-home {
+        margin-top: -148px;
+        h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        // .store-favorites {
+        //     margin-top: 30px;
+        // }
+        .store-products {
+            margin-top: 10px;
+        }
+        .slider-area {
+            position: relative;
+            @media #{$md-layout} {
+                &.mr-15 {
+                    margin-right: 0px;
+                }
+            }
+            @media #{$xs-layout} {
+                &.mr-15 {
+                    margin-right: 0px;
+                }
+            }
+        }
+        .slider-fashion-4-plr {
+            .container-fluid {
+                padding: 0 50px;
+                @media #{$xs-layout} {
+                    padding: 0 30px;
+                }
+            }
+        }
+        .slider-mt-5 {
+            margin-top: 147px;
+            @media #{$md-layout} {
+                margin-top: 91px;
+            }
+            @media #{$xs-layout} {
+                margin-top: 91px;
+            }
+        }
+        .slider-active-1 {
+            z-index: 9;
+        }
+        .nav-style-1 {
+            .slider-icon {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 3;
+                display: inline-block;
+                color: #0A1039;
+                font-size: 45px;
+                top: 50%;
+                transition: all 0.4s ease-in-out 0s;
+                cursor: pointer;
+                visibility: hidden;
+                opacity: 0;
+                &.slider-icon-next {
+                    right: 0%;
+                    left: auto;
+                }
+                &.slider-icon-prev {
+                    left: 0%;
+                    right: auto;
+                }
+                &:hover {
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+            &:hover {
+                .slider-icon {
+                    visibility: visible;
+                    opacity: 1;
+                    &.slider-icon-next {
+                        right: 2%;
+                    }
+                    &.slider-icon-prev {
+                        left: 2%;
+                    }
+                }
+            }
+        }
+        .dot-style-1 {
+            ul {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 9;
+                li {
+                    margin: 5px;
+                    button {
+                        padding: 0;
+                        font-size: 0;
+                        border: 2px solid transparent;
+                        background-color: #0A1039;
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 100%;
+                    }
+                    &.slick-active {
+                        button {
+                            border: 2px solid #0A1039;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            &.dot-style-position2 {
+                ul {}
+            }
+        }
+        .single-slider {
+            .slider-content * {
+                animation-duration: 1.3s;
+                animation-fill-mode: both;
+            }
+        }
+        .bg-light-green-3 {
+            background-color: #DDEDD2;
+        }
+        .single-slider.slick-active {
+            .slider-animated-1 {
+                h1 {
+                    animation-delay: 1.3s;
+                    animation-name: fadeInLeft;
+                }
+                h2 {
+                    animation-delay: 1.6s;
+                    animation-name: fadeInRight;
+                }
+                h3 {
+                    animation-delay: 1.8s;
+                    animation-name: fadeInLeft;
+                }
+                p {
+                    animation-delay: 1.6s;
+                    animation-name: fadeInLeft;
+                }
+                a {
+                    animation-delay: 1.9s;
+                    animation-name: fadeInLeft;
+                }
+                img {
+                    animation-delay: 1.6s;
+                    animation-name: fadeInRight;
+                }
+                .slider-single-img-3 {
+                    img {
+                        animation-delay: 1.6s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                .slider-oganic-img-1 {
+                    img {
+                        animation-delay: 1.9s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                .slider-oganic-img-2 {
+                    img {
+                        animation-delay: 1.6s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .slider-kids-img-content {
+                    img {
+                        animation-delay: 1.0s;
+                        animation-name: fadeInUp;
+                    }
+                    h3 {
+                        animation-delay: 1.5s;
+                        animation-name: fadeInLeft;
+                    }
+                    h4 {
+                        animation-delay: 1.8s;
+                        animation-name: fadeInRight;
+                    }
+                }
+                .slider-flower-wrap {
+                    img {
+                        animation-delay: 0.5s;
+                        animation-name: fadeInDown;
+                    }
+                    h2 {
+                        animation-delay: 0.5s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                &.slider-single-img-8 {
+                    img {
+                        animation-delay: 0.5s;
+                        animation-name: fadeInDown;
+                    }
+                }
+                &.slider-single-img-9 {
+                    img {
+                        animation-delay: 1.7s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                &.slider-content-9 {
+                    &::before {
+                        transition: all 2s ease 0s;
+                        transform: scale(1);
+                    }
+                }
+                &.slider-content-10 {
+                    img {
+                        animation-delay: 0.8s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                .fashion-3-slider-img2 {
+                    img {
+                        animation-delay: 1.3s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .fashion-3-slider-img3 {
+                    img {
+                        animation-delay: .9s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .fashion-3-slider-img4 {
+                    img {
+                        animation-delay: .5s;
+                        animation-name: zoomIn;
+                    }
+                }
+                &.slider-single-img-10 {
+                    >img {
+                        animation-delay: .5s;
+                        animation-name: fadeInRight;
+                    }
+                    .slider-baby-img {
+                        >img {
+                            animation-delay: .5s;
+                            animation-name: fadeInLeft;
+                        }
+                    }
+                    .slider-trolley-img {
+                        >img {
+                            animation-delay: .5s;
+                            animation-name: fadeInUp;
+                        }
+                    }
+                }
+                .slider-single-img-11 {
+                    img {
+                        animation-delay: 1.0s;
+                        animation-name: fadeInUp;
+                    }
+                }
+                .fashion-2-slider-img1-1,
+                .fashion-2-slider-img2-1 {
+                    img {
+                        animation-delay: 1.5s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .fashion-2-slider-img1-2,
+                .fashion-2-slider-img2-2 {
+                    img {
+                        animation-delay: 1.9s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .fashion-2-slider-img1-3 {
+                    img {
+                        animation-delay: 2.2s;
+                        animation-name: zoomIn;
+                    }
+                }
+                .fashion-2-slider-img1-4 {
+                    img {
+                        animation-delay: 2.5s;
+                        animation-name: zoomIn;
+                    }
+                }
+            }
+        }
+        .slider-content-10 {
+            position: relative;
+            h1 {
+                position: absolute;
+                left: 26%;
+                top: 40%;
+                color: $white;
+                font-weight: bold;
+                font-size: 160px;
+                line-height: 120px;
+                margin: 0;
+                z-index: 9;
+                @media #{$xx-layout} {
+                    left: 17%;
+                }
+                @media #{$xl-layout} {
+                    font-size: 130px;
+                    left: 17%;
+                }
+                @media #{$lg-layout} {
+                    font-size: 100px;
+                    left: 15%;
+                }
+                @media #{$md-layout} {
+                    font-size: 80px;
+                    left: 9%;
+                }
+                @media #{$xs-layout} {
+                    font-size: 42px;
+                    left: 6%;
+                }
+                @media #{$sm-layout} {
+                    font-size: 50px;
+                }
+            }
+            h2 {
+                position: absolute;
+                right: 25%;
+                top: 40%;
+                color: $white;
+                font-weight: bold;
+                font-size: 160px;
+                line-height: 120px;
+                margin: 0;
+                z-index: 2;
+                @media #{$xx-layout} {
+                    right: 14%;
+                }
+                @media #{$xl-layout} {
+                    font-size: 130px;
+                    right: 16%;
+                }
+                @media #{$lg-layout} {
+                    font-size: 100px;
+                    right: 15%;
+                }
+                @media #{$md-layout} {
+                    font-size: 80px;
+                    right: 12%;
+                }
+                @media #{$xs-layout} {
+                    font-size: 42px;
+                    right: 6%;
+                    z-index: 9;
+                }
+                @media #{$sm-layout} {
+                    font-size: 50px;
+                    right: 13%;
+                }
+            }
+            img {
+                display: inline-block;
+                position: relative;
+                z-index: 5;
+                max-width: 100%;
+            }
+        }
+        .social-icon-2 {
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            transform: translateY(-50%);
+            @media #{$xs-layout} {
+                left: 5px;
+            }
+            a {
+                display: block;
+                margin-bottom: 40px;
+                color: #CFCFCF;
+                font-size: 16px;
+                @media #{$xs-layout} {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &:hover {
+                    color: #0A1039;
+                }
+            }
+        }
+        @media #{$xs-layout} {
+            .instagram-feed-area {
+                &.mr-40 {
+                    margin-right: 0;
+                }
+            }
+            .instagram-area {
+                &.pt-120 {
+                    padding-top: 60px;
+                }
+                &.pb-115 {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+        .mega-fashion-instagram {
+            padding: 0 15px;
+            @media #{$xs-layout} {
+                padding: 0 0px;
+            }
+        }
+        .section-title-9 {
+            h2 {
+                font-size: 36px;
+                font-weight: bold;
+                line-height: 55px;
+                margin: 0;
+                @media #{$lg-layout} {
+                    font-size: 28px;
+                    line-height: 40px;
+                }
+                @media #{$xs-layout} {
+                    font-size: 26px;
+                    line-height: 40px;
+                }
+            }
+            span {
+                margin: 10px 0 0px;
+                font-size: 16px;
+                color: #828495;
+                display: block;
+            }
+            @media #{$xs-layout} {
+                text-align: center;
+            }
+        }
+        .mega-fashion-instagram-title {
+            margin: 85px 0 95px 85px;
+            @media #{$xx-layout} {
+                margin: 45px 0 45px 0px;
+            }
+            @media #{$xl-layout} {
+                margin: 20px 0 45px 0px;
+            }
+            @media #{$lg-layout} {
+                margin: 27px 0 27px 0px;
+            }
+            @media #{$md-layout} {
+                margin: 0px 0 30px 0px;
+            }
+            @media #{$xs-layout} {
+                margin: 0px 0 30px 0px;
+            }
+        }
+        .instagram-wrap-1 {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -5px;
+            margin-right: -5px;
+            .single-instafeed-wrap {
+                flex: 0 0 33.333%;
+                padding-left: 5px;
+                padding-right: 5px;
+                margin-bottom: 10px;
+            }
+        }
+        .single-instafeed {
+            list-style: none;
+            overflow: hidden;
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    transform: scale(1);
+                    transition: all .5s ease 0s;
+                }
+            }
+            &:hover {
+                a {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        .automobile-instafeed-mrg {
+            margin-top: -56px;
+            @media #{$lg-layout} {
+                margin-top: -30px;
+            }
+            @media #{$xs-layout} {
+                margin-top: 0px;
+            }
+        }
+    }
+    /*-- 
+    Scroll Up 
+-----------------------------------------*/
+    
+    #scrollUp {
+        width: 50px;
+        height: 50px;
+        background-color: #262626;
+        color: #fff;
+        right: 50px;
+        bottom: 53px;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 50px;
+        text-decoration: none;
+        z-index: 9811 !important;
+        @media #{$xs-layout} {
+            width: 40px;
+            height: 40px;
+            right: 20px;
+        }
+        & i {
+            display: block;
+            line-height: 50px;
+            font-size: 22px;
+            @media #{$xs-layout} {
+                line-height: 40px;
+                font-size: 16px;
+            }
+        }
+    }
+    
+    .height-100vh {
+        height: 100vh;
+    }
+    
+    .transparent-bar {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+    }

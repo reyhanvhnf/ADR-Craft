@@ -71,15 +71,13 @@
         <section class="store-heading">
           <div class="container">
             <div class="row">
-              <div class="col-lg-8">
+              <div class="col-lg-8 mb-4">
                 <h1>{{ $product->name }}</h1>
-                <div class="prices">Rp.{{ number_format($product->prices) }}</div>
+                <div class="products-price">Rp.{{ number_format($product->prices) }}</div>
                 <span class="quantity-title">Quantity: </span>
                   <form action="#">
-                      <div class="quantity d-flex mb-3">
-                          <button type="button" data-quantity="minus" data-field="quantity"><i class="fas fa-minus"></i></button>
+                      <div class="quantity d-flex mb-5">
                           <input type="number" id="quantity" value="1"/>
-                          <button type="button" data-quantity="plus" data-field="quantity"><i class="fas fa-plus"></i></button>
                       </div>
                   </form>
               </div>

@@ -12,7 +12,7 @@
 >
   <div class="container-fluid">
     <div class="dashboard-heading">
-      <h2 class="dashboard-title">#{{ $transaction->code }}</h2>
+      <h2 class="dashboard-title">#{{ $transaction->transaction->code}}</h2>
       <p class="dashboard-subtitle">
         Transactions Details
       </p>
@@ -32,42 +32,56 @@
                 </div>
                 <div class="col-12 col-md-8">
                   <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                       <div class="product-title">Customer Name</div>
-                      <div class="product-subtitle">{{ $transaction->transaction->user->name }}</div>
+                      <div class="product-subtitle">
+                        {{ $transaction->transaction->user->name }}
+                      </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                       <div class="product-title">Product Name</div>
                       <div class="product-subtitle">
                         {{ $transaction->product->name }}
                       </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Date of Transaction
-                      </div>
+                    <div class="col-12 col-md-4">
+                        <div class="product-title">Quantity</div>
+                        <div class="product-subtitle">
+                          {{ $transaction->quantity }} pcs
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="product-title">Date of Transaction</div>
                       <div class="product-subtitle">
                         {{ $transaction->created_at }}
                       </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-4">
                       <div class="product-title">Payment Status</div>
                       <div class="product-subtitle text-danger">
                         {{ $transaction->transaction->transaction_status }}
                       </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Total Amount
-                      </div>
+                    <div class="col-12 col-md-4">
+                      <div class="product-title">Total Amount</div>
                       <div class="product-subtitle">
                         Rp. {{ number_format($transaction->transaction->total_price) }}
                       </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Mobile
+                    <div class="col-12 col-md-4">
+                        <div class="product-title">Courier</div>
+                        <div class="product-subtitle">
+                          <p class="d-inline text-uppercase text-success">{{ $transaction->transaction->courier }}</p> - {{ $transaction->transaction->service }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="product-title">Resi</div>
+                      <div class="product-subtitle">
+                        {{ $transaction->transaction->resi }}
                       </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="product-title">Mobile</div>
                       <div class="product-subtitle">
                         {{ $transaction->transaction->user->phone_number }}
                       </div>
@@ -97,18 +111,12 @@
                       </div>
                       <div class="col-12 col-md-6">
                         <div class="product-title">Province</div>
-                        {{--  <div class="product-subtitle">
-                          {{ App\Models\Province::find($transaction->transaction->user->provinces_id)->name }}
-                        </div> --}}
                          <div class="product-subtitle">
                            {{ App\Province::find($transaction->transaction->user->provinces_id)->province }}
                           </div>
                       </div>
                       <div class="col-12 col-md-6">
                         <div class="product-title">City</div>
-                        {{-- <div class="product-subtitle">
-                          {{ App\Models\Regency::find($transaction->transaction->user->regencies_id)->name }}
-                        </div>  --}}
                         <div class="product-subtitle">
                           {{ App\City::find($transaction->transaction->user->regencies_id)->city_name }}
                         </div>

@@ -22,9 +22,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('home') }}">Home </a>
             </li>
-            <li class="nav-item">
-				<a class="nav-link " href="{{ route('contact-us') }}">Contact Us</a>
-			</li>
             @guest
                 <li class="nav-item">
                     <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
