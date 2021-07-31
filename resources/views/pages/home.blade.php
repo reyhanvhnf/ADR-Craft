@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="page-content page-home">
-      <section class="store-carousel">
+     {{-- <section class="store-carousel">
       <div class="container">
           <div class="row">
           <div class="col-lg-12 mb-4" data-aos="zoom-in">
@@ -51,13 +51,13 @@
           </div>
           </div>
       </div>
-      </section>
+      </section> --}}
 
       <section class="store-new-products">
         <div class="container">
           <div class="row">
             <div class="col-12 mb-4" data-aos="fade-up">
-              <h5>New Products</h5>
+              <h5>New Product</h5>
             </div>
           </div>
           <div class="row">

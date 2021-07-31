@@ -130,7 +130,7 @@
                 <div class="form-group">
                   <label for="provinces_id">Province</label>
                   <select name="provinces_id" class="form-control">
-                      <option value="" holder>Pilih Provinsi</option>
+                      <option value="" holder>Select Province</option>
                       @foreach ($provinsi as $result)
                       <option value="{{ $result->id }}" @php if ($user->provinces_id == $result->id) { echo "selected"; } @endphp  >{{ $result->province }}</option>
                       @endforeach
@@ -272,11 +272,11 @@
                     },
                 }
             });
-        </script>
+      </script>
         <script>
             jQuery(document).ready(function() {
                 $.ajax({
-                        url: 'getCity/' + {{ $user->provinces_id }},
+                        url: 'getCity/' + {{ $user->provinces_id ? $user->provinces_id : 0 }},
                         type: "GET",
                         dataType: "json",
                         success: function (data) {
